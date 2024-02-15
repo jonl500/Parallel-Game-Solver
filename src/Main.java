@@ -1,3 +1,4 @@
+//The pegboard gets called in main and the moves object handles the parallel fork-joins
 public class Main {
     public static void main(String[] args) {
         int depth = 18;
