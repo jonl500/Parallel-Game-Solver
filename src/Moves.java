@@ -7,7 +7,7 @@ public class Moves extends RecursiveTask {
     //end of recursion if there are no moves
     //if !checkMove stop recursion by not calling fork (two returns) ->
     //or if out of maxDepth with a preset
-    //tip for splitting -> send the
+    //tip for splitting -> send the copy to fork
     int maxDepth;
 
     Pieces[][] board;
