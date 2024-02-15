@@ -23,18 +23,6 @@ public class Pieces {
         currentState = skippable;
     }
 
-    public int getOutOfPlay() {
-        return outOfPlay;
-    }
-
-    public int getSkippable() {
-        return skippable;
-    }
-
-
-    public boolean isInPlay() {
-        return isInPlay;
-    }
 
     public int removeFromPlay(){
         isInPlay = false;

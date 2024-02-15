@@ -47,9 +47,7 @@ public class Moves extends RecursiveTask {
 
 
     public boolean checkNextMoveDown(Pieces[][] board, int i, int j) {
-        //boolean nextMove = false;
-//        for (int i = 0; i < board.length; i++) {
-//            for (int j = 0; j < board[i].length; j++) {
+
         if(i + 2 < 7 && i + 1 < 7){
             if (board[i][j]!=null && board[i+1][j] != null && board[i + 2][j] != null) {
                 if (board[i][j].getCurrentState() == 0 && board[i + 1][j].getCurrentState() == 0
@@ -59,44 +57,27 @@ public class Moves extends RecursiveTask {
                     return true;//nextMove;
                 }}
         }else{
-            //nextMove = false;
-            //System.out.println("no possible move down");
             return false;
         }
-
-
-//        }
-//
-//    }
         return false;
 
 
     }
 
     public boolean checkNextMoveUp(Pieces[][] board, int i, int j) {
-        //boolean nextMove = false;
-//        for (int i = 0; i < board.length; i++) {
-//            for (int j = 0; j < board[i].length; j++) {
         if(i-2 >= 0 && i - 1 >= 0){
             if (board[i][j]!=null&&board[i - 2][j] != null && board[i - 1][j] != null) {
                 if (board[i][j].getCurrentState() == 0 && board[i - 1][j].getCurrentState() == 0
                         && (board[i - 2][j].getCurrentState() == -1)) {
                     board[i -1][j].makeSkippable();
-                   // nextMove = true;
+
                     return true;
                 }
             }
         }else{
-            //nextMove = false;
             //System.out.println("no possible move up");
             return false;
         }
-
-
-
-//        }
-//
-//    }
         return false;
     }
 
@@ -129,8 +110,6 @@ public class Moves extends RecursiveTask {
 
     public boolean checkNextMoveLeft(Pieces[][] board, int i, int j) {
         boolean nextMove = false;
-//        for (int i = 0; i < board.length; i++) {
-//            for (int j = 0; j < board[i].length; j++) {
         if(j-2 >= 0 && j - 1 >= 0){
             if (board[i][j]!=null&&board[i][j - 2] != null && board[i][j - 1] != null) {
 
@@ -141,7 +120,6 @@ public class Moves extends RecursiveTask {
                     return true;
                 }}
         }else{
-            //nextMove = false;
           // System.out.println("no possible move left");
         return false;
         }
@@ -178,12 +156,8 @@ public class Moves extends RecursiveTask {
             return true;
         }else {
            // System.out.println("no legal moves remain");
-            //moveRemaining = false;
             return false;
         }
-//            }
-//        }
-        //return moveRemaining;
     }
 
     public boolean randomMove(Pieces[][] board){
@@ -205,13 +179,7 @@ public class Moves extends RecursiveTask {
             }
 
         }
-       // while(!(checkNextMoveRight(board,i,j)||checkNextMoveLeft(board,i,j)||checkNextMoveUp(board,i,j)||checkNextMoveDown(board,i,j))){
 
-//            i = ThreadLocalRandom.current().nextInt(0,7);
-//            j = ThreadLocalRandom.current().nextInt(0,7);
-//
-
-        //}
 
 
 
@@ -236,7 +204,6 @@ public class Moves extends RecursiveTask {
                 forkBoard.refreshBoard();
                 movement.setBoard(forkBoard);
                 System.out.println("fork");
-               // System.out.println(getCurrentDepth());
                 movement.fork();
                 join();
             } else {
